@@ -1,0 +1,125 @@
+/* Created by Tivotal */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0;
+}
+
+.wrapper {
+  position: relative;
+  width: 670px;
+  height: 450px;
+  background: #fff;
+  border: 5px solid #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.images {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  display: flex;
+  overflow: hidden;
+}
+
+.img1 {
+  width: 100%;
+  height: 100%;
+  background: url(images/img1.png) no-repeat;
+}
+
+.img2 {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background: url(images/img2.png) no-repeat;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.slider input {
+  width: 100%;
+  outline: none;
+  background: none;
+  appearance: none;
+}
+
+.slider input::-webkit-slider-thumb {
+  height: 440px;
+  width: 5px;
+  appearance: none;
+  cursor: col-resize;
+}
+
+.drag-div {
+  position: absolute;
+  height: 440px;
+  width: 5px;
+  left: 50%;
+  pointer-events: none;
+}
+
+.drag-div::before,
+.drag-div::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 196px;
+  background: #fff;
+}
+
+.drag-div::before {
+  top: 0;
+}
+
+.drag-div::after {
+  bottom: 0;
+}
+
+.drag-div span {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+.drag-div span::before,
+.drag-div span::after {
+  position: absolute;
+  content: "";
+  border: 15px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.drag-div span::before {
+  border-left-color: #fff;
+  left: 40%;
+}
+
+.drag-div span::after {
+  border-top-color: #fff;
+  left: 60%;
+}
